@@ -1,0 +1,333 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { GraduationCap, Music4, Piano, BookOpen, House, Mail, Phone, Globe, ChevronRight } from "lucide-react";
+
+// Replace these with your real links/contact
+const CONTACT = {
+  phone: "+95-000-000-000",
+  email: "pianoforallmusiceducation@gmail.com",
+  facebook: "https://facebook.com/yourpage", // TODO: replace with your real URL
+  telegram: "https://t.me/yourhandle", // optional
+  whatsapp: "https://wa.me/0000000000", // optional
+  instagram: "https://instagram.com/yourhandle", // TODO: replace
+  tiktok: "https://tiktok.com/@yourhandle", // TODO: replace
+  youtube: "https://youtube.com/@yourhandle", // TODO: replace
+  github_repo: "https://github.com/pianoforall/MUSICEDU" // GitHub Pages hosting repo
+};
+
+const COURSES = [
+  {
+    id: "five-keys",
+    title: "5 Keys to Music",
+    icon: <Music4 className="w-6 h-6" />,
+    mode: "Google Meet — 2 months (2 classes/week)",
+    bullets: [
+      "Enrollment now open",
+      "Lessons based on ABRSM syllabus",
+    ],
+    prices: [
+      { label: "Per student", fee: "60,000 MMK" },
+    ],
+    batch: "Current Batch 1", // edit to Batch 2, 3, etc.
+    accent: "from-yellow-500 to-amber-600",
+  },
+  {
+    id: "academic-online",
+    title: "Academic Piano Class (Online)",
+    icon: <Piano className="w-6 h-6" />,
+    mode: "Zoom — 4 weeks",
+    bullets: [
+      "ABRSM Grades 1–8",
+      "Music Theory available for each grade",
+    ],
+    prices: [
+      { label: "8 hours / 4 weeks", fee: "60,000 MMK" },
+      { label: "4 hours / 4 weeks", fee: "120,000 MMK" },
+    ],
+    accent: "from-rose-500 to-pink-500",
+  },
+  {
+    id: "music-theory-online",
+    title: "Private Music Theory Class (Online)",
+    icon: <BookOpen className="w-6 h-6" />,
+    mode: "Zoom — 4 weeks",
+    bullets: ["ABRSM Theory Grades 1–8"],
+    prices: [
+      { label: "8 hours / 4 weeks", fee: "150,000 MMK" },
+      { label: "4 hours / 4 weeks", fee: "75,000 MMK" },
+    ],
+    accent: "from-amber-500 to-orange-500",
+  },
+  {
+    id: "home-tutoring",
+    title: "Home Tutoring Piano Class (In Person)",
+    icon: <House className="w-6 h-6" />,
+    mode: "In person — 4 weeks",
+    bullets: [
+      "ABRSM Grades 1–8",
+      "Music Theory per corresponding grade",
+    ],
+    prices: [
+      { label: "8 hours / 4 weeks", fee: "200,000 MMK" },
+      { label: "4 hours / 4 weeks", fee: "100,000 MMK" },
+    ],
+    accent: "from-blue-600 to-indigo-600",
+  },
+  {
+    id: "basic-piano",
+    title: "Private Basic Piano Class (Online)",
+    icon: <Music4 className="w-6 h-6" />,
+    mode: "Zoom — 2 months",
+    bullets: [
+      "Intro to piano & posture",
+      "Reading music + sight‑reading",
+      "Scales, chords & progressions",
+      "Melody, harmony & simple songs",
+      "Basic music interpretation",
+      "Online recital preparation",
+    ],
+    prices: [{ label: "Full course (2 months)", fee: "200,000 MMK" }],
+    accent: "from-emerald-600 to-teal-600",
+  },
+];
+
+const SocialIcon = ({ href, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition"
+  >
+    {children}
+  </a>
+);
+
+export default function PianoForAllSite() {
+  const [openFAQ, setOpenFAQ] = useState(0);
+
+  return (
+    <div className="min-h-screen w-full bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100">
+      {/* NAVBAR */}
+      <header className="sticky top-0 z-40 backdrop-blur bg-black/30 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 grid place-items-center font-bold">P</div>
+            <span className="font-semibold tracking-wide">Piano for ALL</span>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a href="#courses" className="hover:text-white/80">Courses</a>
+            <a href="#about" className="hover:text-white/80">About</a>
+            <a href="#faq" className="hover:text-white/80">FAQ</a>
+            <a href="#contact" className="hover:text-white/80">Contact</a>
+          </nav>
+          <a href="#enroll" className="px-4 py-2 rounded-xl bg-white text-slate-900 font-medium hover:opacity-90">Enroll</a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-extrabold leading-tight"
+            >
+              Master Piano & Music Theory
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-indigo-300">with Certified Instructors</span>
+            </motion.h1>
+            <p className="mt-6 text-slate-300 max-w-xl">
+              Trinity College London & ABRSM-aligned lessons, available online via Zoom or in‑person home tutoring. Flexible schedules for all ages and levels.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#courses" className="px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-500 font-semibold">View Courses</a>
+              <a href="#contact" className="px-5 py-3 rounded-xl border border-white/20 hover:bg-white/5">Talk to us</a>
+            </div>
+            <div className="mt-6 flex items-center gap-3 text-sm text-slate-400">
+              <GraduationCap className="w-4 h-4" /> ABRSM Grades 1–8 • Online & In‑Person
+            </div>
+          </div>
+          <div className="relative">
+            <div className="aspect-video rounded-2xl bg-white/5 border border-white/10 overflow-hidden shadow-2xl">
+              {/* Placeholder hero media */}
+              <div className="w-full h-full grid place-items-center text-slate-400">Your promo image or video here</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COURSES */}
+      <section id="courses" className="py-16 md:py-24 bg-gradient-to-b from-black/20 to-black/0">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold">Courses & Fees</h2>
+          <p className="mt-2 text-slate-300">Transparent pricing. Choose the plan that fits your schedule.</p>
+
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+            {COURSES.map((c) => (
+              <motion.div
+                key={c.id}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
+                <div className={`inline-flex items-center gap-3 rounded-xl px-3 py-2 bg-gradient-to-r ${c.accent} text-white mb-4`}>
+                  {c.icon}
+                  <span className="text-sm font-semibold">{c.mode}</span>
+                </div>
+                <h3 className="text-xl font-bold">{c.title}</h3>
+                <ul className="mt-4 space-y-2 list-disc list-inside text-slate-300">
+                  {c.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+                <div className=\"mt-5 grid gap-2\">
+                  {c.prices.map((p, i) => (
+                    <div key={i} className=\"flex items-center justify-between rounded-xl bg-black/30 border border-white/10 p-3\">
+                      <span className=\"text-sm\">{p.label}</span>
+                      <span className=\"font-semibold\">{p.fee}</span>
+                    </div>
+                  ))}
+                </div>
+                {c.batch && (
+                  <div className=\"mt-3 inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-300\">
+                    <span>●</span> {c.batch}
+                  </div>
+                )}
+                <a href=\"#enroll\" className=\"mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-slate-900 font-medium\">
+                  Enroll now <ChevronRight className=\"w-4 h-4\" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-20 border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-3xl font-bold">Why learn with us?</h2>
+            <p className="mt-4 text-slate-300">
+              We design lessons to match each student's goals—from exam preparation to learning for fun. Our curriculum follows
+              ABRSM & Trinity standards with regular assessments, practice guides, and recital opportunities.
+            </p>
+            <ul className="mt-6 space-y-3 text-slate-300">
+              <li>• Personalized lesson plans and feedback</li>
+              <li>• Flexible scheduling (weekdays & weekends)</li>
+              <li>• Progress tracking and exam preparation</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <h3 className="text-xl font-semibold flex items-center gap-2"><Globe className="w-5 h-5"/> Platforms</h3>
+            <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+              <div className="rounded-xl bg-black/30 p-3">Zoom (Online)</div>
+              <div className="rounded-xl bg-black/30 p-3">Home Tutoring (In‑Person)</div>
+            </div>
+            <h3 className="mt-6 text-xl font-semibold flex items-center gap-2"><GraduationCap className="w-5 h-5"/> Exams</h3>
+            <p className="mt-2 text-slate-300">ABRSM Grades 1–8; Theory for each level.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ENROLL */}
+      <section id="enroll" className="py-20 bg-gradient-to-b from-white/5 to-white/0 border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 className="text-3xl font-bold">Ready to enroll?</h2>
+            <p className="mt-3 text-slate-300">Send us a message with your preferred course and schedule. We usually respond within 24 hours.</p>
+            <div className="mt-6 space-y-3 text-slate-300">
+              <div className="flex items-center gap-3"><Phone className="w-4 h-4"/> {CONTACT.phone}</div>
+              <div className="flex items-center gap-3"><Mail className="w-4 h-4"/> {CONTACT.email}</div>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <SocialIcon href={CONTACT.facebook}>f</SocialIcon>
+              <SocialIcon href={CONTACT.telegram}>✈️</SocialIcon>
+              <SocialIcon href={CONTACT.whatsapp}>🟢</SocialIcon>
+              <SocialIcon href={CONTACT.instagram}>◎</SocialIcon>
+              <SocialIcon href={CONTACT.tiktok}>♪</SocialIcon>
+              <SocialIcon href={CONTACT.youtube}>▶</SocialIcon>
+            </div>
+          </div>
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="rounded-2xl bg-white/5 border border-white/10 p-6 grid gap-4"
+          >
+            <div>
+              <label className="text-sm text-slate-300">Full name</label>
+              <input className="w-full mt-1 px-3 py-2 rounded-xl bg-black/30 border border-white/10 outline-none" placeholder="Your name"/>
+            </div>
+            <div>
+              <label className="text-sm text-slate-300">Email</label>
+              <input type="email" className="w-full mt-1 px-3 py-2 rounded-xl bg-black/30 border border-white/10 outline-none" placeholder="you@example.com"/>
+            </div>
+            <div>
+              <label className="text-sm text-slate-300">Course</label>
+              <select className="w-full mt-1 px-3 py-2 rounded-xl bg-black/30 border border-white/10 outline-none">
+                {COURSES.map((c) => (
+                  <option key={c.id}>{c.title}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="text-sm text-slate-300">Message</label>
+              <textarea rows={4} className="w-full mt-1 px-3 py-2 rounded-xl bg-black/30 border border-white/10 outline-none" placeholder="Preferred schedule, questions, etc."/>
+            </div>
+            <button className="px-4 py-2 rounded-xl bg-white text-slate-900 font-medium">Send inquiry</button>
+            <p className="text-xs text-slate-400">*This demo form doesn’t send yet. Hook it to your email or WhatsApp.</p>
+          </form>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+          <div className="mt-8 grid gap-3">
+            {[
+              {
+                q: "Do I need a piano at home for online classes?",
+                a: "A digital piano or keyboard with full-size keys is recommended for practice between lessons.",
+              },
+              {
+                q: "Are the lessons suitable for children?",
+                a: "Yes. We tailor pace and materials to each student’s age and level, with options from beginner to Grade 8.",
+              },
+              {
+                q: "Can I prepare for ABRSM exams?",
+                a: "Absolutely. We align our curriculum to ABRSM standards and offer mock exams and guidance.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-white/5 border border-white/10">
+                <button
+                  onClick={() => setOpenFAQ(openFAQ === i ? -1 : i)}
+                  className="w-full text-left px-4 py-3 font-medium"
+                >
+                  {item.q}
+                </button>
+                {openFAQ === i && (
+                  <div className="px-4 pb-4 text-slate-300">{item.a}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer id="contact" className="border-t border-white/10 py-10">
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <div className="text-lg font-semibold">Piano for ALL</div>
+            <div className="text-slate-400 text-sm mt-2">© {new Date().getFullYear()} Piano for ALL. All rights reserved.</div>
+          </div>
+          <div className=\"md:text-right text-slate-300 text-sm\">
+            Trinity College London & ABRSM aligned. Online via Zoom and in‑person home tutoring in your area.
+            <div className=\"mt-2\">Hosted on <a href={CONTACT.github_repo} className=\"underline\">GitHub Pages</a>.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
