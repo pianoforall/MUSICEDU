@@ -1,0 +1,60 @@
+[
+  {
+    "id": "theory-online",
+    "title": "Private Music Theory Class (Online)",
+    "mode": "Online (Zoom / Google Meet)",
+    "description": "Learn ABRSM & Trinity theory from Grade 1 to 8. Covers notation, scales, harmony, rhythm, and composition.",
+    "levels": "ABRSM Grades 1–8",
+    "pricing": [
+      { "duration": "8 hrs / 4 weeks", "price_mmk": 150000 },
+      { "duration": "4 hrs / 4 weeks", "price_mmk": 75000 }
+    ],
+    "image": "../assets/images/theory.jpg"
+  },
+  {
+    "id": "basic-piano",
+    "title": "Private Basic Piano Class (Online)",
+    "mode": "Online (Zoom / Google Meet)",
+    "description": "Learn posture, hand technique, reading music, chords, melody & harmony, and recital preparation.",
+    "levels": "Beginner / Foundation",
+    "pricing": [
+      { "duration": "2 months", "price_mmk": 200000 }
+    ],
+    "image": "../assets/images/basic.jpg"
+  },
+  {
+    "id": "academic-piano",
+    "title": "Academic Piano Class (Online)",
+    "mode": "Online (Zoom / Google Meet)",
+    "description": "Structured piano lessons based on ABRSM & Trinity syllabuses. Focus on performance, scales, and music theory.",
+    "levels": "Grades 1–8",
+    "pricing": [
+      { "duration": "8 hrs / 4 weeks", "price_mmk": 60000 },
+      { "duration": "4 hrs / 4 weeks", "price_mmk": 120000 }
+    ],
+    "image": "../assets/images/academic.jpg"
+  },
+  {
+    "id": "home-tutoring",
+    "title": "Home Tutoring Piano Class (In-Person)",
+    "mode": "In-person (Home Visit)",
+    "description": "Personalized piano lessons at your home. Includes matching theory lessons for ABRSM Grades 1–8.",
+    "levels": "Grades 1–8",
+    "pricing": [
+      { "duration": "8 hrs / 4 weeks", "price_mmk": 200000 },
+      { "duration": "4 hrs / 4 weeks", "price_mmk": 100000 }
+    ],
+    "image": "../assets/images/home.jpg"
+  },
+  {
+    "id": "five-keys",
+    "title": "5 Keys to Music",
+    "mode": "Online (Google Meet)",
+    "description": "Fun group course introducing musical fundamentals — rhythm, melody, and notation based on ABRSM beginner levels.",
+    "levels": "Beginner Group (2x/week)",
+    "pricing": [
+      { "duration": "2 months", "price_mmk": 60000 }
+    ],
+    "image": "../assets/images/fivekeys.jpg"
+  }
+]
