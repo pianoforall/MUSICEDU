@@ -1,0 +1,52 @@
+[
+  {
+    "id": "age",
+    "question": "What ages do you teach?",
+    "answer": "We welcome students of all ages — from 6 years old to adults. Each lesson is tailored to the learner’s pace and interests."
+  },
+  {
+    "id": "beginner",
+    "question": "Do I need any previous piano experience?",
+    "answer": "Not at all! We offer beginner-friendly courses that start from the very basics — posture, hand coordination, and reading simple notes."
+  },
+  {
+    "id": "lesson-format",
+    "question": "How are online classes conducted?",
+    "answer": "Online lessons are held via Zoom or Google Meet. All you need is a stable internet connection and a keyboard or piano at home."
+  },
+  {
+    "id": "in-person",
+    "question": "Do you offer in-person lessons?",
+    "answer": "Yes. Our home tutoring classes are available in select Yangon areas. The teacher travels to your home for one-on-one sessions."
+  },
+  {
+    "id": "duration",
+    "question": "How long is each lesson?",
+    "answer": "Most lessons are 60 minutes. You can choose between 4-hour or 8-hour packages per 4-week term, depending on your schedule."
+  },
+  {
+    "id": "syllabus",
+    "question": "Which syllabus do you follow?",
+    "answer": "We teach according to the ABRSM and Trinity College London syllabuses for both Piano and Music Theory, Grades 1–8."
+  },
+  {
+    "id": "materials",
+    "question": "What materials or books do I need?",
+    "answer": "ABRSM/Trinity graded books and music theory workbooks are recommended. The teacher will guide you on which editions to purchase."
+  },
+  {
+    "id": "payments",
+    "question": "How do I pay for lessons?",
+    "answer": "Payments are made per 4-week block (or per course). We accept local transfers and mobile payments — details are shared after enrollment."
+  },
+  {
+    "id": "certificates",
+    "question": "Will I receive a certificate?",
+    "answer": "After completing each grade level, students may register for official ABRSM or Trinity examinations and receive international certificates."
+  },
+  {
+    "id": "practice",
+    "question": "Do I need to practice between lessons?",
+    "answer": "Yes — consistent practice (15–30 minutes per day) helps you progress faster and retain new skills."
+  }
+]
