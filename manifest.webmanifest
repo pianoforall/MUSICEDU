@@ -1,0 +1,27 @@
+{
+  "name": "Piano for ALL – MUSICEDU",
+  "short_name": "MUSICEDU",
+  "description": "Online and in-person piano & music theory lessons – ABRSM & Trinity aligned.",
+  "start_url": "/MUSICEDU/",
+  "scope": "/MUSICEDU/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0d0e",
+  "theme_color": "#d4b162",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/MUSICEDU/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/MUSICEDU/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "music", "piano", "learning"],
+  "dir": "ltr",
+  "prefer_related_applications": false
+}
