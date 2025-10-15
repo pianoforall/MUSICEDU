@@ -1,0 +1,16 @@
+# Piano for ALL - MUSICEDU
+# Robots.txt controls how search engines crawl your site.
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pianoforall.github.io/MUSICEDU/seo/sitemap.xml
+
+# Optional: Crawl-delay to prevent heavy load on GitHub Pages servers
+Crawl-delay: 5
+
+# Disallow any temporary or test folders (uncomment if needed)
+# Disallow: /drafts/
+# Disallow: /test/
+# Disallow: /private/
